@@ -32,3 +32,13 @@
   - 问题类型：脚本挂载对象错误 / 多实例脚本未关闭。
   - 排查方法：在 Hierarchy 搜索 `t:Lesson11`，确认场景里有几个对象挂了同一个脚本；日志中使用 `Debug.Log($"脚本挂在:{gameObject.name}", this);`，方便点击 Console 直接定位对象。
   - 经验总结：Unity 中每一个激活的、挂有脚本的 GameObject 都会独立执行 `Awake`、`Start`、`Update` 等生命周期，不会只执行当前“想调试”的那个对象。
+
+- 2026-05-26：`Lesson12` 实现鼠标滚轮控制炮管俯仰时，最初误以为 `Math.Clamp` / `Mathf.Clamp` 会自动限制 Transform 旋转。
+  - 问题类型：Clamp 返回值未赋值 / Transform 旋转理解不清。
+  - 排查方法：确认 Clamp 的返回值是否被保存或赋回 `localEulerAngles`；确认代码是否仍在使用 `Rotate()` 累加旋转。
+  - 经验总结：Clamp 只计算并返回限制后的值，不会自动修改对象状态。需要把结果赋给变量或 Transform。
+
+- 2026-05-26：限制炮管俯仰角时，直接用 `localEulerAngles.x` 和 `-20~20` 比较会出问题，因为 Unity 欧拉角通常显示为 `0~360`。
+  - 问题类型：Unity 欧拉角范围理解错误。
+  - 排查方法：打印 `gun.localEulerAngles.x`，观察向负方向旋转时是否变成 `359`、`350`、`340` 这类值。
+  - 经验总结：限制负角度前，先把 `0~360` 转换成 `-180~180`，例如 `if (x > 180) x -= 360;`。

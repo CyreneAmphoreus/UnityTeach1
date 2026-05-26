@@ -408,6 +408,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8723339773368202299, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723339773368202299, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723339773368202299, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -421,10 +433,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7035548372151025313, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2122706793}
+    - targetCorrespondingSourceObject: {fileID: 7035548372151025313, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2122706795}
   m_SourcePrefab: {fileID: 100100000, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
 --- !u!4 &1174651314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7035548370717662119, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
+  m_PrefabInstance: {fileID: 971074027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1933063839 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8723339773368202299, guid: 9c6ac777d8f21374496e8677b480b9c6, type: 3}
   m_PrefabInstance: {fileID: 971074027}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2122706789 stripped
@@ -493,6 +513,20 @@ MonoBehaviour:
   rotateSpeed: 20
   moveSpeed: 20
   sensitivity: 20
+--- !u!114 &2122706795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122706789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62299cdc6aeacae4095ba53a8562a19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lesson12
+  gun: {fileID: 1933063839}
+  nowGunPitchX: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

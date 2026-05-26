@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class Lesson11 : MonoBehaviour
 {
     [SerializeField]
+    private Transform cam;
+    [SerializeField]
     private float rotateSpeed = 20f;
     [SerializeField]
     private float moveSpeed = 20f;
@@ -14,6 +16,7 @@ public class Lesson11 : MonoBehaviour
     [SerializeField]
     private Transform tankHead;
     private PlayerController playerController;
+    private bool camIsFollow = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -28,6 +31,8 @@ public class Lesson11 : MonoBehaviour
         playerController.Player.Move.canceled += OnMove;
         playerController.Player.Look.performed += OnLook;
         playerController.Player.Look.canceled += OnLook;
+        playerController.Player.Aim.performed += OnAim;
+        playerController.Player.Aim.canceled += OnAim;
     }
 
     private void OnDisable()
@@ -37,6 +42,8 @@ public class Lesson11 : MonoBehaviour
         playerController.Player.Move.canceled -= OnMove;
         playerController.Player.Look.performed -= OnLook;
         playerController.Player.Look.canceled -= OnLook;
+        playerController.Player.Aim.performed -= OnAim;
+        playerController.Player.Aim.canceled -= OnAim;
     }
 
     // Update is called once per frame
@@ -45,6 +52,19 @@ public class Lesson11 : MonoBehaviour
         transform.Translate(new Vector3(0,0,moveInput.y) * (Time.deltaTime * moveSpeed));
         transform.Rotate(Vector3.up * moveInput.x * (Time.deltaTime * rotateSpeed));
         tankHead.Rotate(Vector3.up*lookInput.x*sensitivity*Time.deltaTime);
+        if (camIsFollow)
+        {
+            // cam.localEulerAngles = new Vector3(cam.localEulerAngles.x, tankHead.localEulerAngles.y, cam.localEulerAngles.z);
+            
+            cam.RotateAround(tankHead.position,Vector3.up,lookInput.x*sensitivity*Time.deltaTime );
+
+            #region 老输入系统
+
+            // cam.RotateAround(tankHead.position,Vector3.up,Input.GetAxis("Mouse X"));
+
+            #endregion
+        }
+        
     }
 
     private void OnMove(InputAction.CallbackContext ctx)
@@ -54,5 +74,20 @@ public class Lesson11 : MonoBehaviour
     private void OnLook(InputAction.CallbackContext ctx)
     {
         lookInput = ctx.ReadValue<Vector2>();
+    }
+
+    private void OnAim(InputAction.CallbackContext ctx)
+    {
+
+        if (ctx.performed)
+        {
+            camIsFollow = true;
+        }
+
+        if (ctx.canceled)
+        {
+            camIsFollow = false;
+        }
+
     }
 }
