@@ -61,6 +61,13 @@
    - 创建 git commit
    - push 到 GitHub
 
+3.1. 每次完成小节总结、提交本节或 push 前，必须执行文档收尾检查：
+   - `LearningProgress.md` 是否需要追加本节学习记录
+   - `TangLessonsNotes.md` 是否需要记录教程写法与当前 Unity 写法差异
+   - `CommonMistakes.md` 是否需要记录本节暴露的重复问题
+   - `README.md` 的当前学习阶段、已完成内容、项目结构、后续计划是否需要同步更新
+   - 如果 README 应更新但未更新，先补 README，再 commit / push
+
 4. `LearningProgress.md` 只追加，不覆盖历史。每次记录包含：
    - 教程/小节名称
    - 本节目标
@@ -132,6 +139,7 @@ study: 更新 Unity 教程练习记录
    - 先执行 `git status`
    - 检查当前 branch
    - 检查 `git remote -v`
+   - 因为当前环境普通 `git push` 无法直接访问本机 Git 凭据，执行 `git push` 时直接使用提升权限请求，不要先执行一次普通 `git push` 等待失败
    - 如果 remote 已配置，再执行 `git push`
    - 如果 remote 未配置，不要乱推送，提示用户先绑定 GitHub 仓库
 
