@@ -41,12 +41,14 @@
 ## 学习记录维护规则
 
 1. 如果不存在，则自动创建以下文件：
+   - `Docs/CurrentStatus.md`
    - `Docs/LearningProgress.md`
    - `Docs/CommonMistakes.md`
    - `Docs/TangLessonsNotes.md`
+   - `Docs/Archive/`
    - `README.md`
 
-2. 当用户说以下内容时，助手需要先读取 `Docs` 中已有记录，再结合当前项目文件判断用户学到了哪里：
+2. 当用户说以下内容时，助手需要先读取 `Docs/CurrentStatus.md` 和必要的索引文件，再结合当前项目文件判断用户学到了哪里。除非需要复盘历史，不要默认读取所有 Archive 长文档：
    - “检查代码”
    - “总结本节”
    - “本节完成”
@@ -62,13 +64,21 @@
    - push 到 GitHub
 
 3.1. 每次完成小节总结、提交本节或 push 前，必须执行文档收尾检查：
+   - `CurrentStatus.md` 是否已更新当前进度、最近完成、当前风险和最近提交
    - `LearningProgress.md` 是否需要追加本节学习记录
    - `TangLessonsNotes.md` 是否需要记录教程写法与当前 Unity 写法差异
    - `CommonMistakes.md` 是否需要记录本节暴露的重复问题
+   - `Docs/Archive/` 是否需要新增或更新当前 Lesson 的完整归档
    - `README.md` 的当前学习阶段、已完成内容、项目结构、后续计划是否需要同步更新
    - 如果 README 应更新但未更新，先补 README，再 commit / push
 
-4. `LearningProgress.md` 只追加，不覆盖历史。每次记录包含：
+4. 文档采用“当前摘要 + 按 Lesson 归档”结构：
+   - `CurrentStatus.md` 保存当前最新状态，默认优先读取
+   - `LearningProgress.md` 保存进度索引和最近变更
+   - `TangLessonsNotes.md` 保存知识点索引
+   - `Docs/Archive/LessonXX-主题.md` 保存对应 Lesson 的完整总结
+
+4.1. 每个 Lesson 归档记录包含：
    - 教程/小节名称
    - 本节目标
    - 已完成内容

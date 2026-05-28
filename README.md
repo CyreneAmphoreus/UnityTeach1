@@ -67,9 +67,11 @@ README.md              项目说明
 
 ## 学习记录入口
 
+- [当前学习状态](Docs/CurrentStatus.md)
 - [学习进度](Docs/LearningProgress.md)
 - [常见错误](Docs/CommonMistakes.md)
 - [唐老狮教程笔记](Docs/TangLessonsNotes.md)
+- [按 Lesson 归档](Docs/Archive/)
 - [GPT 辅助学习记录](Gpt对话协助/)
 
 ## 当前重点记录
@@ -88,7 +90,9 @@ README.md              项目说明
 
 ## 后续计划
 
-- 每完成一个教程小节后，追加学习记录并同步检查 README 是否需要更新。
+- 每完成一个教程小节后，更新 `Docs/CurrentStatus.md`，并在 `Docs/Archive/` 中维护对应 Lesson 归档。
+- `LearningProgress.md` 和 `TangLessonsNotes.md` 作为索引使用，避免每次检查时读取过长文档。
+- 每次收尾同步检查 README 是否需要更新。
 - 每次代码审查后，整理做得好的地方和需要改进的问题。
 - 将重复出现的 Unity 问题沉淀到 `CommonMistakes.md`。
 - 对教程旧写法和当前 Unity 推荐写法做对照记录。
