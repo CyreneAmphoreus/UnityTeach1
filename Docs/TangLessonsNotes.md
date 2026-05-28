@@ -120,3 +120,48 @@ if (x > 180)
 ### 适合初学阶段的选择建议
 
 初学阶段手写 `if (x > 180) x -= 360;` 很适合理解 Unity 角度机制。后续可以再学习 `Mathf.DeltaAngle` 或封装工具方法，让角度处理更简洁。
+
+## Lesson13：Camera 组件、分屏与分层渲染
+
+### 教程写法是否仍然可用
+
+使用多个 Camera、Viewport Rect、Culling Mask、Depth 等方式控制画面显示，在当前 Unity 版本中仍然可用。对于理解摄像机渲染范围、分屏、分层显示非常适合。
+
+### 当前 Unity 版本是否有更推荐的新做法
+
+基础练习中直接配置 Camera 组件是合适的。实际项目中，如果画面需求更复杂，可能会结合 Cinemachine、URP Camera Stack、Render Texture 或自定义渲染流程。但在当前学习阶段，先掌握原生 Camera 组件更重要。
+
+### 旧写法和新写法的区别
+
+- 原生 Camera 配置：适合理解底层概念，操作直接，学习成本低。
+- Cinemachine：更适合复杂跟随、镜头切换、阻尼和轨道镜头，但它建立在理解 Camera 基础之上。
+- URP Camera Stack：更适合 UI、前景、后处理或多相机叠加需求，但需要渲染管线相关知识。
+
+### Camera Viewport Rect
+
+Viewport Rect 决定摄像机画面渲染到 Game 窗口的哪一块区域：
+
+- `x: 0, width: 0.5` 表示左半屏。
+- `x: 0.5, width: 0.5` 表示右半屏。
+- `y` 和 `height` 可用于上下分屏。
+
+### Layer 与 Culling Mask
+
+Layer 是对象所属的分组，Culling Mask 是摄像机要渲染哪些 Layer。想让摄像机 A 只看物体 A、摄像机 B 只看物体 B，需要：
+
+- 给物体 A 设置 Layer A。
+- 给物体 B 设置 Layer B。
+- 摄像机 A 的 Culling Mask 只勾选 Layer A。
+- 摄像机 B 的 Culling Mask 只勾选 Layer B。
+
+### Clear Flags 与 Depth
+
+多个摄像机同时渲染到同一个 Game 窗口时，需要注意：
+
+- Depth 越大的摄像机越后渲染。
+- Clear Flags 如果清屏，可能覆盖前一个摄像机的画面。
+- 如果要叠加多个摄像机画面，需要合理配置 Clear Flags 和 Depth。
+
+### 适合初学阶段的选择建议
+
+当前阶段重点掌握 Camera 自带组件即可。先理解 Viewport Rect、Culling Mask、Depth、Clear Flags，再去学习 Cinemachine 或 URP Camera Stack，会更稳。

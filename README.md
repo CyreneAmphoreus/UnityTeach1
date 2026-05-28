@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制等内容的练习。
+这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件等内容的练习。
 
 本项目不只是保存代码，也会长期记录学习过程、常见错误、教程旧写法与当前 Unity 推荐写法之间的差异。
 
@@ -14,9 +14,11 @@
 
 ## 当前学习阶段
 
-当前已完成到 `Lesson12 / Screen 分 P 扩展练习` 附近。
+当前已完成到 `Lesson13 / Camera 组件信息练习`。
 
-虽然 Screen 分 P 的教程内容和习题较少，但本项目在这一节中扩展练习了鼠标滚轮、炮管俯仰、右键摄像机观察和 Unity 欧拉角限制等内容。
+本节重点练习了多个 Camera 的分屏显示、Camera 跟随目标、Layer 与 Culling Mask 分层渲染，以及多个摄像机在同一个 Game 窗口中同时显示不同对象。
+
+`Lesson14` 文件夹已经创建，用于下一 P 课程预备学习。
 
 当前项目环境：
 
@@ -37,6 +39,11 @@
 - `Lesson12` 炮管俯仰角度限制
 - 右键按住时摄像机围绕坦克观察
 - Unity 欧拉角 `0~360` 与 `-180~180` 转换理解
+- `Lesson13` Camera 分屏显示
+- `Lesson13` Camera 跟随坦克
+- `Lesson13` Layer + Culling Mask 分层渲染
+- `Lesson13` 多 Camera 同窗口显示不同对象
+- `Lesson14` 下一课程预备场景
 - Git 仓库初始化和 GitHub 推送
 - Unity 专用 `.gitignore`
 - 项目级助手规则 `AGENTS.md`
@@ -49,10 +56,10 @@
 Assets/
   Prefabs/             Prefab 练习资源
   Scenes/              Unity 场景
-  Scripts/             唐老狮教程分节脚本
+  Scripts/             唐老狮教程分节脚本和练习场景
   PlayerController.*   Input System 输入配置和生成代码
 Packages/              Unity 包配置
-ProjectSettings/       Unity 项目设置
+ProjectSettings/       Unity 项目设置，包括 Layer/Tag 等
 Docs/                  学习进度、常见错误和教程笔记
 Gpt对话协助/           通过 GPT 辅助解决问题的学习记录
 AGENTS.md              项目级助手协作规则
@@ -74,6 +81,9 @@ README.md              项目说明
 - `transform.Find` 适合学习层级查找，但稳定项目中更推荐 Inspector 显式引用。
 - `Mathf.Clamp` 只返回限制后的值，不会自动修改 Transform。
 - Unity 的 `localEulerAngles` 常以 `0~360` 表示，限制负角度前需要转换成 signed angle。
+- Camera 的 Viewport Rect 可用于分屏。
+- Layer + Culling Mask 可让不同摄像机看到不同对象。
+- 多 Camera 同屏时要同时关注 Clear Flags、Depth 和 Culling Mask。
 
 ## 后续计划
 
@@ -82,4 +92,5 @@ README.md              项目说明
 - 将重复出现的 Unity 问题沉淀到 `CommonMistakes.md`。
 - 对教程旧写法和当前 Unity 推荐写法做对照记录。
 - 继续保持新旧输入系统对照学习。
+- 继续学习 Lesson14，并保持单独场景记录每个练习。
 - 在合适的小节节点创建 Git commit，并在明确要求时 push 到 GitHub。
