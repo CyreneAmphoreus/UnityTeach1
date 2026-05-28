@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件等内容的练习。
+这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换等内容的练习。
 
 本项目不只是保存代码，也会长期记录学习过程、常见错误、教程旧写法与当前 Unity 推荐写法之间的差异。
 
@@ -14,11 +14,9 @@
 
 ## 当前学习阶段
 
-当前已完成到 `Lesson13 / Camera 组件信息练习`。
+当前已完成到 `Lesson14 / 坐标转换练习`。
 
-本节重点练习了多个 Camera 的分屏显示、Camera 跟随目标、Layer 与 Culling Mask 分层渲染，以及多个摄像机在同一个 Game 窗口中同时显示不同对象。
-
-`Lesson14` 文件夹已经创建，用于下一 P 课程预备学习。
+本节重点练习了世界坐标转屏幕坐标、鼠标屏幕坐标转世界坐标，以及通过新 Input System 的鼠标左键输入在点击位置创建 Cube。
 
 当前项目环境：
 
@@ -43,7 +41,8 @@
 - `Lesson13` Camera 跟随坦克
 - `Lesson13` Layer + Culling Mask 分层渲染
 - `Lesson13` 多 Camera 同窗口显示不同对象
-- `Lesson14` 下一课程预备场景
+- `Lesson14` 世界坐标转屏幕坐标
+- `Lesson14` 鼠标点击位置转世界坐标并创建 Cube
 - Git 仓库初始化和 GitHub 推送
 - Unity 专用 `.gitignore`
 - 项目级助手规则 `AGENTS.md`
@@ -84,6 +83,8 @@ README.md              项目说明
 - Camera 的 Viewport Rect 可用于分屏。
 - Layer + Culling Mask 可让不同摄像机看到不同对象。
 - 多 Camera 同屏时要同时关注 Clear Flags、Depth 和 Culling Mask。
+- `ScreenToWorldPoint` 必须提供有意义的 `z` 深度。
+- 鼠标点击场景放置物体时，实际项目中常用射线检测。
 
 ## 后续计划
 
@@ -92,5 +93,5 @@ README.md              项目说明
 - 将重复出现的 Unity 问题沉淀到 `CommonMistakes.md`。
 - 对教程旧写法和当前 Unity 推荐写法做对照记录。
 - 继续保持新旧输入系统对照学习。
-- 继续学习 Lesson14，并保持单独场景记录每个练习。
+- 后续学习射线检测时，对照理解 `ScreenToWorldPoint` 和 `ScreenPointToRay`。
 - 在合适的小节节点创建 Git commit，并在明确要求时 push 到 GitHub。
