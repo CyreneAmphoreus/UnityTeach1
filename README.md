@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换等内容的练习。
+这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换、光源组件等内容的练习。
 
 本项目不只是保存代码，也会长期记录学习过程、常见错误、教程旧写法与当前 Unity 推荐写法之间的差异。
 
@@ -14,9 +14,9 @@
 
 ## 当前学习阶段
 
-当前已完成到 `Lesson14 / 坐标转换练习`。
+当前已完成到 `Lesson15 / 光源组件练习`。
 
-本节重点练习了世界坐标转屏幕坐标、鼠标屏幕坐标转世界坐标，以及通过新 Input System 的鼠标左键输入在点击位置创建 Cube。
+本节重点练习了通过代码控制 `Point Light` 的位置和亮度模拟蜡烛光源效果，并通过旋转 `Directional Light` 模拟白天黑夜变化。
 
 当前项目环境：
 
@@ -43,6 +43,8 @@
 - `Lesson13` 多 Camera 同窗口显示不同对象
 - `Lesson14` 世界坐标转屏幕坐标
 - `Lesson14` 鼠标点击位置转世界坐标并创建 Cube
+- `Lesson15` 点光源模拟蜡烛摆动和亮度变化
+- `Lesson15` 方向光旋转模拟昼夜变化
 - Git 仓库初始化和 GitHub 推送
 - Unity 专用 `.gitignore`
 - 项目级助手规则 `AGENTS.md`
@@ -87,6 +89,8 @@ README.md              项目说明
 - 多 Camera 同屏时要同时关注 Clear Flags、Depth 和 Culling Mask。
 - `ScreenToWorldPoint` 必须提供有意义的 `z` 深度。
 - 鼠标点击场景放置物体时，实际项目中常用射线检测。
+- `Point Light` 可用于局部光源，`Directional Light` 可用于整体方向光。
+- 重命名 `[SerializeField]` 字段后，要检查 Inspector 引用是否重新保存。
 
 ## 后续计划
 

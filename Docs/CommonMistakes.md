@@ -8,7 +8,10 @@
 
 ## Inspector 引用为空
 
-- 暂无记录。
+- 2026-05-30：`Lesson15` 中将序列化字段 `light` 重命名为 `candleLight` 后，场景里原本保存的 Inspector 引用不会自动变成新字段名，导致脚本可能出现空引用。
+  - 问题类型：序列化字段改名 / Inspector 引用未重新保存。
+  - 排查方法：检查场景 YAML 或 Inspector 中脚本组件字段，确认是否存在新字段 `candleLight`、`directionalLight`，而不是只剩旧字段 `light`。
+  - 经验总结：字段改名后，要么在 Inspector 中重新拖引用并保存场景，要么使用 `UnityEngine.Serialization.FormerlySerializedAs` 帮 Unity 迁移旧字段数据。
 
 ## Prefab 覆盖问题
 

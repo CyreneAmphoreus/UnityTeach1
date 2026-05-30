@@ -2,13 +2,13 @@
 
 ## 当前学习状态
 
-- 当前完成：Lesson14 坐标转换练习
-- 下一阶段：继续学习 Lesson15 或下一 P 内容
+- 当前完成：Lesson15 光源组件练习
+- 下一阶段：继续学习 Lesson16 或下一 P 内容
 - 学习来源：唐老狮 Unity 教程练习
 - Unity 版本：`6000.3.10f1`
 - Input System：`1.18.0`
 - 当前分支：`master`
-- 远程仓库：`https://github.com/CyreneAmphoreus/UnityTeach1.git`
+- 远程仓库：`https://github.com/CyreneMine/UnityTeach1.git`
 
 ## 最近完成
 
@@ -16,6 +16,7 @@
 - Lesson12：Screen 分 P 扩展练习、鼠标滚轮控制炮管俯仰、右键摄像机观察。
 - Lesson13：Camera 分屏、跟随目标、Layer + Culling Mask 分层渲染。
 - Lesson14：`WorldToScreenPoint`、`ScreenToWorldPoint`、鼠标点击位置创建 Cube。
+- Lesson15：点光源模拟蜡烛摆动与亮度变化，方向光旋转模拟昼夜变化。
 
 ## 当前重点概念
 
@@ -27,6 +28,8 @@
 - Layer + Culling Mask 可让不同摄像机看到不同对象。
 - `ScreenToWorldPoint` 必须提供有意义的 `z` 深度。
 - 鼠标点击场景放置物体时，实际项目中常用射线检测。
+- `Light.intensity` 可以通过代码控制亮度变化。
+- `Directional Light` 的 Transform 旋转会改变全局光照方向，可用于理解昼夜变化的基础原理。
 
 ## 当前常见风险
 
@@ -34,6 +37,7 @@
 - Inspector 引用未绑定导致空引用。
 - 修改 Layer/Tag/Input Actions 后忘记提交 `ProjectSettings` 或生成代码。
 - Unity 场景文件中的临时摄像机位置、Transform 变化混入提交。
+- 重命名 `[SerializeField]` 字段后，需要重新保存 Inspector 引用，或使用 `FormerlySerializedAs` 保留旧字段迁移。
 - 文档收尾时遗漏 README 或 CurrentStatus。
 
 ## 默认检查流程
@@ -50,4 +54,4 @@
 
 ## 最近提交
 
-- `f705624 study: 完成唐老狮教程 - Lesson14 坐标转换练习`
+- `study: 完成唐老狮教程 - Lesson15 光源组件练习`

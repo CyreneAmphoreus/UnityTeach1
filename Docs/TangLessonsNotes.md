@@ -54,6 +54,18 @@
 - `ScreenToWorldPoint` 把屏幕坐标转换为世界坐标，但必须提供有意义的 `z` 深度。
 - 鼠标点击场景放置物体时，实际项目中更常用 `ScreenPointToRay` + 射线检测。
 
+### 光源组件
+
+归档文件：[Lesson15 - 光源组件练习](Archive/Lesson15-Light.md)
+
+重点：
+
+- `Point Light` 适合模拟局部光源，例如蜡烛、灯泡、火把。
+- `Light.intensity` 可以通过代码动态改变，用来模拟亮度波动。
+- `Directional Light` 代表方向性全局光，旋转它可以改变整体受光方向。
+- 教程中用 Transform 和 intensity 直接控制光源的写法现在仍然可用，适合初学阶段理解 Light 组件。
+- 正式项目中的昼夜系统通常还会联动环境光、天空盒、后处理、阴影和渲染管线设置。
+
 ## 后续记录规则
 
 - 每完成一个新 Lesson，在 `Docs/Archive/` 中新增对应文件。
