@@ -12,10 +12,10 @@
 
 ## 当前进度
 
-- 当前完成：Lesson17 物体位移方式理论
-- 下一阶段：继续学习 Lesson18 或下一 P 内容
+- 当前完成：Lesson21 音频基础理论
+- 下一阶段：暂时搁置本项目，先学习 UGUI 和 PlayerPrefs
 - 当前项目环境：Unity `6000.3.10f1`，Input System `1.18.0`
-- 最近提交：`study: 完成唐老狮教程 - Lesson17 物体位移方式理论`
+- 最近提交：`study: 更新唐老狮教程练习记录 - Audio理论与阶段暂停`
 
 ## 归档索引
 
@@ -26,9 +26,51 @@
 - [Lesson15 - 光源组件练习](Archive/Lesson15-Light.md)
 - [Lesson16 - 物理系统碰撞检测练习](Archive/Lesson16-PhysicsCollision.md)
 - [Lesson17 - 物体位移方式理论](Archive/Lesson17-MovementWays.md)
+- [Lesson18-21 - Audio 基础理论](Archive/Lesson18-21-AudioBasics.md)
+- [阶段暂停 - 转学 UGUI 与 PlayerPrefs](Archive/Pause-UGUI-PlayerPrefs.md)
 - [文档结构调整记录](Archive/DocsReorganization.md)
 
 ## 最近变更
+
+### 2026-06-01 Lesson18-21 Audio 基础理论与阶段暂停
+
+#### 教程/小节名称
+
+唐老狮 Unity 教程 - Lesson18 到 Lesson21 Audio 基础理论
+
+#### 本节目标
+
+补充音频资源导入、`AudioSource` / `AudioListener` 组件、`AudioSource` API、麦克风录制与音频采样数据读取的理论知识，并记录后续学习路线调整。
+
+#### 已完成内容
+
+- 总结 Lesson18：AudioClip 导入参数，包括 Load Type、Preload Audio Data、Compression Format、Quality、Sample Rate 等。
+- 总结 Lesson19：`AudioSource` 和 `AudioListener` 组件参数。
+- 总结 Lesson20：`AudioSource` 常用 API，包括 `Play()`、`Pause()`、`Stop()`、`PlayOneShot()` 等。
+- 总结 Lesson21：`Microphone.Start()`、`Microphone.End()`、播放录制 AudioClip，以及 `AudioClip.GetData()` 读取采样数据。
+- 记录当前项目阶段暂停：先学习 UGUI 和 PlayerPrefs，再回来继续制作入门教程项目。
+- 记录技术选择：旧式 `OnGUI` 只作为了解内容，后续项目优先使用 UGUI。
+
+#### 做得好的地方
+
+- 能识别教程中的 `OnGUI` 已经偏旧，没有机械照搬到后续项目。
+- 能在正式做入门项目前先补齐 UGUI 和 PlayerPrefs，避免项目做到一半再补基础。
+- 能把没有练习题的理论课合并记录，减少文档碎片。
+
+#### 当前问题
+
+- Audio 理论还没有结合实际小项目使用，后续需要在入门项目中通过 BGM、按钮音效、开火音效、设置音量等功能巩固。
+- UGUI 和 PlayerPrefs 尚未学完，本项目会暂停一段时间。
+
+#### 推荐改进方向
+
+- 学 UGUI 时重点关注 Canvas、RectTransform、Button、Text、Image、Panel、事件绑定和基础界面组织。
+- 学 PlayerPrefs 时重点关注音量、最高分、设置项、简单进度的保存和读取。
+- 回到本项目后，用 UGUI 制作菜单、设置面板、游戏界面和结算界面。
+
+#### 下一节建议
+
+先完成 UGUI 和 PlayerPrefs 学习，再回来继续唐老狮入门项目整合阶段。
 
 ### 2026-05-31 Lesson17 物体位移方式理论
 

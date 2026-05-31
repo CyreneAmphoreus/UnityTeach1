@@ -90,6 +90,29 @@
 - 直接修改 Rigidbody 速度会立刻覆盖当前速度，适合需要明确控制速度的场景。
 - 需要参与碰撞、受力、重力等物理表现时，优先考虑 Rigidbody 相关移动方式。
 
+### Audio 基础理论
+
+归档文件：[Lesson18-21 - Audio 基础理论](Archive/Lesson18-21-AudioBasics.md)
+
+重点：
+
+- AudioClip 导入参数决定音频资源的内存、加载方式、压缩质量和播放成本。
+- `AudioSource` 负责播放声音，`AudioListener` 负责接收声音，场景中通常只保留一个启用的 Listener。
+- `AudioSource.Play()`、`Stop()`、`Pause()`、`PlayOneShot()` 是初学阶段最常用的播放控制 API。
+- 麦克风录制通过 `Microphone.Start()` 开始，`Microphone.End()` 结束，录制结果是一个 `AudioClip`。
+- `AudioClip.GetData()` 读取的是采样数据，不等于直接保存成音频文件；真正导出 WAV 等格式还需要额外编码。
+
+### GUI / UGUI / PlayerPrefs 路线选择
+
+归档文件：[阶段暂停 - 转学 UGUI 与 PlayerPrefs](Archive/Pause-UGUI-PlayerPrefs.md)
+
+重点：
+
+- `OnGUI` 属于较老的即时模式 GUI，当前阶段只需要能看懂教程写法和历史用途。
+- 后续入门项目优先使用 UGUI 制作菜单、设置面板和游戏界面。
+- PlayerPrefs 适合保存音量、最高分、简单设置和轻量进度。
+- 本项目暂时暂停，等学完 UGUI 和 PlayerPrefs 后回来继续完成入门项目。
+
 ## 后续记录规则
 
 - 每完成一个新 Lesson，在 `Docs/Archive/` 中新增对应文件。

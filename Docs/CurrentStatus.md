@@ -2,8 +2,8 @@
 
 ## 当前学习状态
 
-- 当前完成：Lesson17 物体位移方式理论
-- 下一阶段：继续学习 Lesson18 或下一 P 内容
+- 当前完成：Lesson21 音频基础理论
+- 下一阶段：暂时搁置本项目，先学习 UGUI 和 PlayerPrefs，再回来制作入门教程项目
 - 学习来源：唐老狮 Unity 教程练习
 - Unity 版本：`6000.3.10f1`
 - Input System：`1.18.0`
@@ -19,6 +19,10 @@
 - Lesson15：点光源模拟蜡烛摆动与亮度变化，方向光旋转模拟昼夜变化。
 - Lesson16：鼠标左键发射子弹、Trigger 碰撞检测、子弹触地/碰敌销毁、敌人被击中 3 次销毁。
 - Lesson17：总结物体位移的四种方式：直接改 Position、`Translate`、`Rigidbody.AddForce/AddRelativeForce`、直接改 Rigidbody 速度。
+- Lesson18：AudioClip 音频导入参数。
+- Lesson19：`AudioSource` 和 `AudioListener` 组件参数。
+- Lesson20：`AudioSource` 常用播放控制 API。
+- Lesson21：麦克风录制、结束录制、播放录音和 `AudioClip.GetData()` 读取采样数据。
 
 ## 当前重点概念
 
@@ -36,6 +40,8 @@
 - 修改 Tag 需要提交 `ProjectSettings/TagManager.asset`。
 - Transform 位移和 Rigidbody 物理位移属于不同思路，是否参与物理系统是重要区别。
 - `AddForce` 表示持续施力或冲量，直接改速度表示立刻覆盖当前运动速度。
+- 音频学习分为导入参数、场景播放组件、代码控制 API、麦克风录制与采样数据读取。
+- `OnGUI` 已偏旧，后续入门项目优先使用 UGUI；PlayerPrefs 用于保存简单本地设置或进度。
 
 ## 当前常见风险
 
@@ -46,6 +52,13 @@
 - 重命名 `[SerializeField]` 字段后，需要重新保存 Inspector 引用，或使用 `FormerlySerializedAs` 保留旧字段迁移。
 - 使用 Tag 驱动碰撞逻辑时，要确认场景对象和 Prefab 的 Tag 都已正确设置。
 - 文档收尾时遗漏 README 或 CurrentStatus。
+
+## 当前学习路线调整
+
+- 唐老狮基础练习项目暂时搁置。
+- 先补充学习 UGUI 和 PlayerPrefs。
+- 后续回来继续完成入门教程项目，并优先使用 UGUI 代替旧式 `OnGUI`。
+- `OnGUI` 只需要能看懂教程写法和历史用途，不作为后续项目主力 UI 方案。
 
 ## 默认检查流程
 
@@ -61,4 +74,4 @@
 
 ## 最近提交
 
-- `study: 完成唐老狮教程 - Lesson17 物体位移方式理论`
+- `study: 更新唐老狮教程练习记录 - Audio理论与阶段暂停`

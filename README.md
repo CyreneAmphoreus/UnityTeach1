@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换、光源组件、物理碰撞检测、物体位移方式等内容的练习。
+这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换、光源组件、物理碰撞检测、物体位移方式、音频基础等内容的练习。
 
 本项目不只是保存代码，也会长期记录学习过程、常见错误、教程旧写法与当前 Unity 推荐写法之间的差异。
 
@@ -14,9 +14,11 @@
 
 ## 当前学习阶段
 
-当前已完成到 `Lesson17 / 物体位移方式理论`。
+当前已完成到 `Lesson21 / Audio 基础理论`。
 
-本节重点总结了直接修改 `Position`、使用 `Translate`、通过 `Rigidbody.AddForce/AddRelativeForce` 施力、直接修改 Rigidbody 速度这几种位移方式。
+最近几节主要是理论内容：物体位移方式、音频导入参数、`AudioSource` / `AudioListener` 组件、`AudioSource` API、麦克风录制与 `AudioClip.GetData()`。
+
+当前项目计划暂时搁置一段时间。后续先学习 UGUI 和 PlayerPrefs，再回来继续制作唐老狮入门教程项目；旧式 `OnGUI` 只作为了解内容，后续项目优先使用 UGUI。
 
 当前项目环境：
 
@@ -48,6 +50,10 @@
 - `Lesson16` 鼠标左键发射子弹
 - `Lesson16` Trigger 碰撞检测、子弹销毁和敌人血量销毁
 - `Lesson17` 物体位移方式理论总结
+- `Lesson18` AudioClip 音频导入参数
+- `Lesson19` AudioSource 和 AudioListener 组件参数
+- `Lesson20` AudioSource 常用 API
+- `Lesson21` 麦克风录制、播放录音和 AudioClip 采样数据读取
 - Git 仓库初始化和 GitHub 推送
 - Unity 专用 `.gitignore`
 - 项目级助手规则 `AGENTS.md`
@@ -98,6 +104,9 @@ README.md              项目说明
 - 修改 Tag 后需要提交 `ProjectSettings/TagManager.asset`。
 - Transform 移动和 Rigidbody 物理移动的核心区别是是否交给物理系统处理。
 - `AddForce` 更偏物理受力，直接改速度更偏明确控制运动结果。
+- 音频学习需要同时关注资源导入、场景播放组件、代码控制和录音数据。
+- `OnGUI` 已偏旧，后续入门项目优先使用 UGUI。
+- PlayerPrefs 适合保存音量、最高分、设置项和简单进度。
 
 ## 后续计划
 
@@ -110,4 +119,7 @@ README.md              项目说明
 - 继续保持新旧输入系统对照学习。
 - 后续学习射线检测时，对照理解 `ScreenToWorldPoint` 和 `ScreenPointToRay`。
 - 后续学习 Rigidbody 运动时，对照理解 Transform 直接移动和 Rigidbody 物理移动的区别。
+- 当前项目暂停，先学习 UGUI 和 PlayerPrefs。
+- 学完 UGUI 和 PlayerPrefs 后，回来继续制作唐老狮入门教程项目。
+- 回来后优先用 UGUI 做菜单、设置面板、游戏界面和结算界面。
 - 在合适的小节节点创建 Git commit，并在明确要求时 push 到 GitHub。
