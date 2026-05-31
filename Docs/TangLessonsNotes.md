@@ -66,6 +66,18 @@
 - 教程中用 Transform 和 intensity 直接控制光源的写法现在仍然可用，适合初学阶段理解 Light 组件。
 - 正式项目中的昼夜系统通常还会联动环境光、天空盒、后处理、阴影和渲染管线设置。
 
+### 物理系统碰撞检测
+
+归档文件：[Lesson16 - 物理系统碰撞检测练习](Archive/Lesson16-PhysicsCollision.md)
+
+重点：
+
+- `OnTriggerEnter(Collider other)` 用于 Trigger 碰撞回调，需要 Collider 配置为 `Is Trigger`。
+- Trigger 回调通常要求参与检测的对象中至少一方带有 Rigidbody。
+- 用 Tag 判断对象类型是教程阶段很直观的写法，现在仍然可用。
+- Unity 更推荐 `CompareTag()` 做 Tag 比较；当前小练习中 `tag == "xxx"` 也能正常工作。
+- 子弹带 Rigidbody 但使用 Transform 移动可以完成当前练习；后续学习 Rigidbody 运动时再切换到更物理的写法。
+
 ## 后续记录规则
 
 - 每完成一个新 Lesson，在 `Docs/Archive/` 中新增对应文件。

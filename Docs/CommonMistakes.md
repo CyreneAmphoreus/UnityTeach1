@@ -27,7 +27,10 @@
 
 ## Rigidbody / Collider 使用问题
 
-- 暂无记录。
+- 2026-05-31：`Lesson16` 中子弹、地面、敌人的碰撞逻辑依赖 Tag、Collider、Trigger 和 Rigidbody 同时配置正确。
+  - 问题类型：物理碰撞配置遗漏 / Tag 与代码判断不一致。
+  - 排查方法：确认 `Bullet` Prefab 带 `Rigidbody` 和 `SphereCollider(Is Trigger)`；确认地面 Tag 为 `Ground`，敌人 Tag 为 `Enemy`，子弹 Tag 为 `Bullet`；确认 `ProjectSettings/TagManager.asset` 已提交。
+  - 经验总结：碰撞代码看起来正确但不触发时，优先检查 Inspector 配置，而不是只盯脚本。
 
 ## 其他常见问题
 

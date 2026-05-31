@@ -12,10 +12,10 @@
 
 ## 当前进度
 
-- 当前完成：Lesson15 光源组件练习
-- 下一阶段：继续学习 Lesson16 或下一 P 内容
+- 当前完成：Lesson16 物理系统碰撞检测练习
+- 下一阶段：继续学习 Lesson17 或下一 P 内容
 - 当前项目环境：Unity `6000.3.10f1`，Input System `1.18.0`
-- 最近提交：`study: 完成唐老狮教程 - Lesson15 光源组件练习`
+- 最近提交：`study: 完成唐老狮教程 - Lesson16 物理系统碰撞检测练习`
 
 ## 归档索引
 
@@ -24,9 +24,55 @@
 - [Lesson13 - Camera 组件练习](Archive/Lesson13-Camera.md)
 - [Lesson14 - 坐标转换练习](Archive/Lesson14-CoordinateConversion.md)
 - [Lesson15 - 光源组件练习](Archive/Lesson15-Light.md)
+- [Lesson16 - 物理系统碰撞检测练习](Archive/Lesson16-PhysicsCollision.md)
 - [文档结构调整记录](Archive/DocsReorganization.md)
 
 ## 最近变更
+
+### 2026-05-31 Lesson16 物理系统碰撞检测练习
+
+#### 教程/小节名称
+
+唐老狮 Unity 教程 - Lesson16 物理系统碰撞检测练习
+
+#### 本节目标
+
+在之前 Input 和 Screen 练习的基础上，加入鼠标左键发射子弹、子弹触地销毁、子弹击中立方体 3 次后销毁立方体的功能。
+
+#### 已完成内容
+
+- 新建 `Assets/Scripts/Lesson16_物理系统碰撞检测/` 练习目录和 `Lesson16.unity` 场景。
+- 新增 `Lesson16.cs`，使用新 Input System 的 `Fire.performed` 事件实例化子弹。
+- 新增 `Bullet.prefab`，配置 `Bullet` Tag、`SphereCollider`、`Rigidbody` 和 `BulletController`。
+- 新增 `BulletController.cs`，通过 `FixedUpdate()` 移动子弹，并在触发 `Ground` 或 `Enemy` 时销毁子弹。
+- 新增 `EnemyController.cs`，敌人被 `Bullet` 触发时扣血，血量归零后销毁自身。
+- 在 `ProjectSettings/TagManager.asset` 中新增 `Ground`、`Enemy`、`Bullet` Tag。
+- 将 `ButtleController` / `buttleSpeed` 拼写调整为 `BulletController` / `bulletSpeed`。
+- 将敌人死亡判断从每帧 `Update()` 轮询改为扣血后立即判断。
+- 保留旧输入系统点击发射写法作为注释对照。
+
+#### 做得好的地方
+
+- 能把发射、子弹、敌人拆成不同脚本，各自负责自己的职责。
+- 能意识到当前课程重点是 Trigger 和碰撞检测，而不是提前优化 Rigidbody 移动方式。
+- 能根据教程答案和审查建议清理拼写问题、无用 using 和不必要的每帧判断。
+- 能正确把 TagManager 变更纳入版本管理范围。
+
+#### 当前问题
+
+- 子弹移动仍使用 `Transform.Translate`，这符合当前教程节奏；后续学到 Rigidbody 运动时再对比两种方式。
+- 当前用 `tag == "xxx"` 判断 Tag，在练习规模下能用；正式项目或高频碰撞中更推荐 `CompareTag()`。
+- 子弹速度较快且使用离散碰撞检测，未来速度继续增大时需要关注穿透问题。
+
+#### 推荐改进方向
+
+- 后续学习 Rigidbody 后，可以把子弹移动改为基于 Rigidbody 的速度、力或 `MovePosition`。
+- 后续项目复杂后，可以用 `CompareTag()`、Layer、接口或伤害组件替代简单字符串 Tag 判断。
+- 可以继续观察 Trigger、Collider、Rigidbody 三者组合对回调触发的影响。
+
+#### 下一节建议
+
+继续学习物理系统相关内容时，重点区分 Trigger 回调、Collision 回调、Rigidbody 运动和 Transform 直接移动之间的差异。
 
 ### 2026-05-30 Lesson15 光源组件练习
 

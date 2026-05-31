@@ -2,8 +2,8 @@
 
 ## 当前学习状态
 
-- 当前完成：Lesson15 光源组件练习
-- 下一阶段：继续学习 Lesson16 或下一 P 内容
+- 当前完成：Lesson16 物理系统碰撞检测练习
+- 下一阶段：继续学习 Lesson17 或下一 P 内容
 - 学习来源：唐老狮 Unity 教程练习
 - Unity 版本：`6000.3.10f1`
 - Input System：`1.18.0`
@@ -17,6 +17,7 @@
 - Lesson13：Camera 分屏、跟随目标、Layer + Culling Mask 分层渲染。
 - Lesson14：`WorldToScreenPoint`、`ScreenToWorldPoint`、鼠标点击位置创建 Cube。
 - Lesson15：点光源模拟蜡烛摆动与亮度变化，方向光旋转模拟昼夜变化。
+- Lesson16：鼠标左键发射子弹、Trigger 碰撞检测、子弹触地/碰敌销毁、敌人被击中 3 次销毁。
 
 ## 当前重点概念
 
@@ -30,6 +31,8 @@
 - 鼠标点击场景放置物体时，实际项目中常用射线检测。
 - `Light.intensity` 可以通过代码控制亮度变化。
 - `Directional Light` 的 Transform 旋转会改变全局光照方向，可用于理解昼夜变化的基础原理。
+- Trigger 碰撞需要至少一方带 Rigidbody，并且对象 Tag 要和代码判断一致。
+- 修改 Tag 需要提交 `ProjectSettings/TagManager.asset`。
 
 ## 当前常见风险
 
@@ -38,6 +41,7 @@
 - 修改 Layer/Tag/Input Actions 后忘记提交 `ProjectSettings` 或生成代码。
 - Unity 场景文件中的临时摄像机位置、Transform 变化混入提交。
 - 重命名 `[SerializeField]` 字段后，需要重新保存 Inspector 引用，或使用 `FormerlySerializedAs` 保留旧字段迁移。
+- 使用 Tag 驱动碰撞逻辑时，要确认场景对象和 Prefab 的 Tag 都已正确设置。
 - 文档收尾时遗漏 README 或 CurrentStatus。
 
 ## 默认检查流程
@@ -54,4 +58,4 @@
 
 ## 最近提交
 
-- `study: 完成唐老狮教程 - Lesson15 光源组件练习`
+- `study: 完成唐老狮教程 - Lesson16 物理系统碰撞检测练习`

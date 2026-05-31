@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换、光源组件等内容的练习。
+这是一个 Unity 学习练习项目，用于跟随唐老狮 Unity 教程完成基础知识、脚本、场景、Prefab、输入系统、Transform 控制、Camera 组件、坐标转换、光源组件、物理碰撞检测等内容的练习。
 
 本项目不只是保存代码，也会长期记录学习过程、常见错误、教程旧写法与当前 Unity 推荐写法之间的差异。
 
@@ -14,9 +14,9 @@
 
 ## 当前学习阶段
 
-当前已完成到 `Lesson15 / 光源组件练习`。
+当前已完成到 `Lesson16 / 物理系统碰撞检测练习`。
 
-本节重点练习了通过代码控制 `Point Light` 的位置和亮度模拟蜡烛光源效果，并通过旋转 `Directional Light` 模拟白天黑夜变化。
+本节重点练习了通过鼠标左键发射子弹、使用 Trigger 检测子弹与地面/敌人的碰撞，并在命中后销毁子弹或敌人。
 
 当前项目环境：
 
@@ -45,6 +45,8 @@
 - `Lesson14` 鼠标点击位置转世界坐标并创建 Cube
 - `Lesson15` 点光源模拟蜡烛摆动和亮度变化
 - `Lesson15` 方向光旋转模拟昼夜变化
+- `Lesson16` 鼠标左键发射子弹
+- `Lesson16` Trigger 碰撞检测、子弹销毁和敌人血量销毁
 - Git 仓库初始化和 GitHub 推送
 - Unity 专用 `.gitignore`
 - 项目级助手规则 `AGENTS.md`
@@ -91,6 +93,8 @@ README.md              项目说明
 - 鼠标点击场景放置物体时，实际项目中常用射线检测。
 - `Point Light` 可用于局部光源，`Directional Light` 可用于整体方向光。
 - 重命名 `[SerializeField]` 字段后，要检查 Inspector 引用是否重新保存。
+- Trigger 碰撞检测需要同时关注 Collider、Rigidbody、Is Trigger 和 Tag。
+- 修改 Tag 后需要提交 `ProjectSettings/TagManager.asset`。
 
 ## 后续计划
 
@@ -102,4 +106,5 @@ README.md              项目说明
 - 对教程旧写法和当前 Unity 推荐写法做对照记录。
 - 继续保持新旧输入系统对照学习。
 - 后续学习射线检测时，对照理解 `ScreenToWorldPoint` 和 `ScreenPointToRay`。
+- 后续学习 Rigidbody 运动时，对照理解 Transform 直接移动和 Rigidbody 物理移动的区别。
 - 在合适的小节节点创建 Git commit，并在明确要求时 push 到 GitHub。
